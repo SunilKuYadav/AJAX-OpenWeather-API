@@ -1,0 +1,37 @@
+
+#weathertable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#weathertable td, #weathertable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#weathertable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#weathertable tr:hover {
+    background-color: #ddd;
+}
+#weathertable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04aa6d;
+    color: #fff;
+}
+
+#weatherbutton {
+    margin-top: 10px;
+    background-color: #04aa6d;
+    border-radius: 50px;
+    outline: none;
+    box-shadow: 5px 5px 10px green;
+    width: 100px;
+    height: 30px;
+    color: #ddd;
+    font-weight: bold;
+}
