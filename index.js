@@ -1,15 +1,11 @@
-
+var cityArr = ['Delhi', 'Mumbai', 'Kolkata', 'Noida', 'Mathura', 'Lucknow'];
 function requestData() {
   $('.weather td').remove();
-    loadDoc("https://api.openweathermap.org/data/2.5/weather?q=Delhi&appid=0c8a1ab5717f74d9705a27b1da25fbc5", myFunction1);
-    loadDoc("https://api.openweathermap.org/data/2.5/weather?q=Mumbai&appid=0c8a1ab5717f74d9705a27b1da25fbc5", myFunction1);
-    loadDoc("https://api.openweathermap.org/data/2.5/weather?q=Kolkata&appid=0c8a1ab5717f74d9705a27b1da25fbc5", myFunction1);
-    loadDoc("https://api.openweathermap.org/data/2.5/weather?q=Noida&appid=0c8a1ab5717f74d9705a27b1da25fbc5", myFunction1);
+  for (let i=0; i<cityArr.length; i++) {
+    const cUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityArr[i]}&appid=0c8a1ab5717f74d9705a27b1da25fbc5`;
+    loadDoc(cUrl, myFunction);
+  }
 }
-
-
-
-
 function loadDoc(url, cFunction) {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function() {cFunction(this);}
@@ -17,10 +13,10 @@ function loadDoc(url, cFunction) {
   xhttp.send();
 }
 
-function myFunction1(xhttp) {
-  if (xhttp.readyState == 4 && xhttp.status == 200) {
+function myFunction(xhttp) {
+  try {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
       let row = '';
-    console.log(xhttp.responseText);
     let rawData = JSON.parse(xhttp.responseText);
     raw = `
     <tr>
@@ -32,4 +28,8 @@ function myFunction1(xhttp) {
     `;
     $('.weather').append(raw);
 }
+  }catch(error){
+    console.log(error)
+  }
+
 }
