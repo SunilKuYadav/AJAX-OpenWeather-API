@@ -1,10 +1,31 @@
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #04aa6d;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 #weathertable {
     border-collapse: collapse;
     width: 100%;
 }
 
-#weathertable td, #weathertable th {
+#weathertable td,
+#weathertable th {
     border: 1px solid #ddd;
     padding: 8px;
 }
@@ -16,6 +37,7 @@
 #weathertable tr:hover {
     background-color: #ddd;
 }
+
 #weathertable th {
     padding-top: 12px;
     padding-bottom: 12px;
@@ -26,12 +48,13 @@
 
 #weatherbutton {
     margin-top: 10px;
+    padding: 10px 50px;
     background-color: #04aa6d;
     border-radius: 50px;
+    font-size: 20px;
     outline: none;
     box-shadow: 5px 5px 10px green;
-    width: 100px;
-    height: 30px;
     color: #ddd;
     font-weight: bold;
+    border: none;
 }
